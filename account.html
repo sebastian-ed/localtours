@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Mi cuenta · LocalTours Pro</title>
+  <meta name="description" content="Marketplace de experiencias y alojamientos locales con paneles por rol y backend en Supabase.">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="logo" href="./index.html">
+          <span class="logo-mark">LT</span>
+          <span>LocalTours Pro</span>
+        </a>
+        <nav class="header-nav">
+          <a href="./index.html#catalog">Experiencias</a>
+          <a href="./index.html#catalog">Alojamientos</a>
+          <a href="./index.html#how-it-works">Cómo funciona</a>
+        </nav>
+        <div class="nav-actions" data-nav-actions></div>
+      </div>
+    </header>
+
+    
+<main id="account-page">
+  <section class="section">
+    <div class="container section-head">
+      <div>
+        <h1 id="account-name">Mi cuenta</h1>
+        <p id="account-role"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container account-grid">
+      <article class="dashboard-card">
+        <h2>Perfil</h2>
+        <form id="profile-form" class="cards-grid">
+          <div class="field">
+            <label>Email</label>
+            <input id="profile-email" class="input" type="email" disabled>
+          </div>
+          <div class="field">
+            <label>Nombre completo</label>
+            <input id="profile-full-name" class="input" type="text">
+          </div>
+          <div class="field">
+            <label>Empresa / marca</label>
+            <input id="profile-company-name" class="input" type="text">
+          </div>
+          <div class="field">
+            <label>Teléfono</label>
+            <input id="profile-phone" class="input" type="text">
+          </div>
+          <div class="field">
+            <label>WhatsApp</label>
+            <input id="profile-whatsapp" class="input" type="text">
+          </div>
+          <div class="field">
+            <label>Sitio web</label>
+            <input id="profile-website" class="input" type="url">
+          </div>
+          <div class="field">
+            <label>Ciudad</label>
+            <input id="profile-city" class="input" type="text">
+          </div>
+          <div class="field">
+            <label>Bio</label>
+            <textarea id="profile-bio"></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Guardar perfil</button>
+        </form>
+
+        <hr class="soft">
+
+        <h2>Cambiar contraseña</h2>
+        <form id="password-form" class="cards-grid">
+          <div class="field">
+            <label>Nueva contraseña</label>
+            <input class="input" type="password" name="password" required>
+          </div>
+          <div class="field">
+            <label>Repetir contraseña</label>
+            <input class="input" type="password" name="password_confirm" required>
+          </div>
+          <button class="btn btn-primary" type="submit">Actualizar contraseña</button>
+        </form>
+      </article>
+
+      <div class="cards-grid">
+        <article class="dashboard-card">
+          <h2>Mis reservas</h2>
+          <div id="bookings-box"></div>
+        </article>
+
+        <article class="dashboard-card">
+          <h2>Mis guardados</h2>
+          <div id="favorites-box"></div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+    <footer class="footer">
+      <div class="container footer-row">
+        <div>LocalTours Pro · Marketplace propio para tours locales y alojamientos.</div>
+        <div data-user-badge class="user-badge"></div>
+      </div>
+    </footer>
+
+    <nav class="mobile-quick" data-mobile-quick></nav>
+  </div>
+
+  <script type="module" src="./assets/js/account.js"></script>
+</body>
+</html>

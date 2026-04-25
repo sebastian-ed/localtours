@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Detalle · LocalTours Pro</title>
+  <meta name="description" content="Marketplace de experiencias y alojamientos locales con paneles por rol y backend en Supabase.">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="logo" href="./index.html">
+          <span class="logo-mark">LT</span>
+          <span>LocalTours Pro</span>
+        </a>
+        <nav class="header-nav">
+          <a href="./index.html#catalog">Experiencias</a>
+          <a href="./index.html#catalog">Alojamientos</a>
+          <a href="./index.html#how-it-works">Cómo funciona</a>
+        </nav>
+        <div class="nav-actions" data-nav-actions></div>
+      </div>
+    </header>
+
+    
+<main id="detail-page">
+  <section class="section">
+    <div class="container detail-hero">
+      <span id="detail-pill" class="pill"></span>
+      <h1 id="detail-title">Cargando...</h1>
+      <p id="detail-summary"></p>
+      <div class="kpi-inline">
+        <span class="kpi-pill" id="detail-location"></span>
+        <span class="kpi-pill" id="detail-rating"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container detail-gallery" id="detail-gallery"></div>
+  </section>
+
+  <section class="section">
+    <div class="container detail-grid">
+      <div class="cards-grid">
+        <article class="detail-card">
+          <h2>Descripción</h2>
+          <p id="detail-description"></p>
+          <div class="chip-row" id="detail-categories"></div>
+        </article>
+
+        <article class="detail-card">
+          <h2>Highlights</h2>
+          <ul class="clean-list" id="detail-highlights"></ul>
+        </article>
+
+        <article class="detail-card">
+          <h2>Qué incluye</h2>
+          <ul class="clean-list" id="detail-includes"></ul>
+          <hr class="soft">
+          <h2>Qué no incluye</h2>
+          <ul class="clean-list" id="detail-excludes"></ul>
+        </article>
+
+        <article class="detail-card">
+          <h2>Itinerario</h2>
+          <ol class="clean-list" id="detail-itinerary"></ol>
+        </article>
+
+        <article class="detail-card">
+          <h2>Información clave</h2>
+          <div class="cards-grid">
+            <div class="stats-card"><strong id="detail-duration">—</strong><span>Duración</span></div>
+            <div class="stats-card"><strong id="detail-cancellation">—</strong><span>Cancelación</span></div>
+            <div class="stats-card"><strong id="detail-capacity">—</strong><span>Capacidad</span></div>
+            <div class="stats-card"><strong id="detail-languages">—</strong><span>Idiomas</span></div>
+          </div>
+        </article>
+
+        <article class="detail-card">
+          <h2>Proveedor</h2>
+          <div id="provider-box"></div>
+        </article>
+
+        <article class="detail-card">
+          <h2>Preguntas frecuentes</h2>
+          <div id="faqs-box"></div>
+        </article>
+
+        <article class="detail-card">
+          <h2>Reseñas</h2>
+          <div id="reviews-box"></div>
+        </article>
+      </div>
+
+      <aside class="detail-sticky">
+        <article class="detail-card price-card">
+          <div>
+            <small>Precio desde</small>
+            <div id="detail-price" class="price-block"></div>
+          </div>
+          <button id="favorite-btn" class="btn btn-ghost" type="button">Guardar</button>
+
+          <form id="booking-form" class="cards-grid">
+            <div class="field">
+              <label>Fecha</label>
+              <input class="input" type="date" name="travel_date" required>
+            </div>
+            <div class="field">
+              <label>Hora</label>
+              <input class="input" type="time" name="travel_time">
+            </div>
+            <div class="field">
+              <label>Viajeros</label>
+              <select name="guests">
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Observaciones</label>
+              <textarea name="notes" placeholder="Requerimientos, alergias, consultas, etc."></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Reservar</button>
+          </form>
+        </article>
+      </aside>
+    </div>
+  </section>
+</main>
+
+
+    <footer class="footer">
+      <div class="container footer-row">
+        <div>LocalTours Pro · Marketplace propio para tours locales y alojamientos.</div>
+        <div data-user-badge class="user-badge"></div>
+      </div>
+    </footer>
+
+    <nav class="mobile-quick" data-mobile-quick></nav>
+  </div>
+
+  <script type="module" src="./assets/js/detail.js"></script>
+</body>
+</html>

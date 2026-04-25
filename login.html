@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ingresar · LocalTours Pro</title>
+  <meta name="description" content="Marketplace de experiencias y alojamientos locales con paneles por rol y backend en Supabase.">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="logo" href="./index.html">
+          <span class="logo-mark">LT</span>
+          <span>LocalTours Pro</span>
+        </a>
+        <nav class="header-nav">
+          <a href="./index.html#catalog">Experiencias</a>
+          <a href="./index.html#catalog">Alojamientos</a>
+          <a href="./index.html#how-it-works">Cómo funciona</a>
+        </nav>
+        <div class="nav-actions" data-nav-actions></div>
+      </div>
+    </header>
+
+    
+<main>
+  <section class="section-lg">
+    <div class="container auth-grid">
+      <article class="auth-card">
+        <span class="pill">Acceso seguro</span>
+        <h1>Ingreso profesional para usuarios, proveedores y admins.</h1>
+        <p>Registro, login, recuperación de contraseña y escalamiento de permisos bajo control del super admin. Como corresponde.</p>
+        <div class="cards-grid">
+          <div class="stats-card"><strong>Auth</strong><span>Supabase Auth con flujo PKCE.</span></div>
+          <div class="stats-card"><strong>Recovery</strong><span>Reset por email con página dedicada.</span></div>
+          <div class="stats-card"><strong>Roles</strong><span>Controlados por perfil y RLS.</span></div>
+        </div>
+      </article>
+
+      <article class="auth-card">
+        <div class="auth-switcher">
+          <button type="button" class="is-active" data-auth-tab="login">Ingresar</button>
+          <button type="button" data-auth-tab="register">Crear cuenta</button>
+          <button type="button" data-auth-tab="forgot">Recuperar acceso</button>
+        </div>
+
+        <div data-auth-panel="login">
+          <h2>Ingresar</h2>
+          <form id="login-form" class="cards-grid">
+            <div class="field">
+              <label>Email</label>
+              <input class="input" type="email" name="email" required placeholder="vos@empresa.com">
+            </div>
+            <div class="field">
+              <label>Contraseña</label>
+              <input class="input" type="password" name="password" required placeholder="••••••••">
+            </div>
+            <button class="btn btn-primary" type="submit">Ingresar</button>
+          </form>
+        </div>
+
+        <div data-auth-panel="register" hidden>
+          <h2>Crear cuenta</h2>
+          <form id="register-form" class="cards-grid">
+            <div class="field">
+              <label>Nombre completo</label>
+              <input class="input" type="text" name="full_name" required placeholder="Nombre y apellido">
+            </div>
+            <div class="field">
+              <label>Email</label>
+              <input class="input" type="email" name="email" required placeholder="vos@empresa.com">
+            </div>
+            <div class="field">
+              <label>Teléfono</label>
+              <input class="input" type="text" name="phone" placeholder="+54 11 ...">
+            </div>
+            <div class="field">
+              <label>Quiero ingresar como</label>
+              <select name="requested_role">
+                <option value="traveler">Usuario final</option>
+                <option value="provider">Proveedor</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Contraseña</label>
+              <input class="input" type="password" name="password" required placeholder="Mínimo 8 caracteres">
+            </div>
+            <div class="field">
+              <label>Repetir contraseña</label>
+              <input class="input" type="password" name="password_confirm" required placeholder="Repetí la contraseña">
+            </div>
+            <button class="btn btn-primary" type="submit">Crear cuenta</button>
+          </form>
+        </div>
+
+        <div data-auth-panel="forgot" hidden>
+          <h2>Recuperar acceso</h2>
+          <form id="forgot-form" class="cards-grid">
+            <div class="field">
+              <label>Email</label>
+              <input class="input" type="email" name="email" required placeholder="Te vamos a enviar el enlace">
+            </div>
+            <button class="btn btn-primary" type="submit">Enviar email de recuperación</button>
+          </form>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+
+    <footer class="footer">
+      <div class="container footer-row">
+        <div>LocalTours Pro · Marketplace propio para tours locales y alojamientos.</div>
+        <div data-user-badge class="user-badge"></div>
+      </div>
+    </footer>
+
+    <nav class="mobile-quick" data-mobile-quick></nav>
+  </div>
+
+  <script type="module" src="./assets/js/login-page.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LocalTours Pro</title>
+  <meta name="description" content="Marketplace de experiencias y alojamientos locales con paneles por rol y backend en Supabase.">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="logo" href="./index.html">
+          <span class="logo-mark">LT</span>
+          <span>LocalTours Pro</span>
+        </a>
+        <nav class="header-nav">
+          <a href="./index.html#catalog">Experiencias</a>
+          <a href="./index.html#catalog">Alojamientos</a>
+          <a href="./index.html#how-it-works">Cómo funciona</a>
+        </nav>
+        <div class="nav-actions" data-nav-actions></div>
+      </div>
+    </header>
+
+    
+<main>
+  <section class="hero">
+    <div class="container hero-shell">
+      <article class="hero-card">
+        <span class="pill">Marketplace B2C + backoffice multirol</span>
+        <h1>Tu propio “Civitatis”, pero con operación propia.</h1>
+        <p>Vendé experiencias y alojamientos locales con una UX moderna, control total de proveedores y un backend robusto en Supabase. El usuario final explora, compara, reserva y guarda favoritos. Vos gobernás el negocio.</p>
+
+        <div class="hero-kpis">
+          <div class="hero-kpi"><strong>Mobile first</strong><span>Diseño pensado para vender desde el celular.</span></div>
+          <div class="hero-kpi"><strong>Multirol</strong><span>Usuario, proveedor, admin y super admin.</span></div>
+          <div class="hero-kpi"><strong>GitHub Pages</strong><span>Frontend estático, rápido y barato de operar.</span></div>
+        </div>
+      </article>
+
+      <aside class="hero-search">
+        <form id="hero-search-form" class="grid-search">
+          <div class="field">
+            <label>Destino o experiencia</label>
+            <input class="input" type="text" name="destination" placeholder="Ej. Bariloche, Tigre, bodegas, navegación...">
+          </div>
+          <div class="field">
+            <label>Fecha</label>
+            <input class="input" type="date" name="travel_date">
+          </div>
+          <div class="field">
+            <label>Viajeros</label>
+            <select name="guests">
+              <option value="1">1 viajero</option>
+              <option value="2" selected>2 viajeros</option>
+              <option value="3">3 viajeros</option>
+              <option value="4">4 viajeros</option>
+              <option value="5">5 viajeros</option>
+              <option value="6">6 viajeros</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" type="submit">Buscar</button>
+        </form>
+        <p class="helper-note">La UX empuja a conversión: búsqueda rápida, cards informativas, detalle claro y reserva simple. Nada de laberintos innecesarios.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Destacados</h2>
+          <p>Selección curada para empujar margen y rotación.</p>
+        </div>
+      </div>
+      <div id="featured-grid" class="hero-panels"></div>
+    </div>
+  </section>
+
+  <section class="section" id="catalog">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Catálogo</h2>
+          <p id="catalog-count">0 resultados</p>
+        </div>
+      </div>
+
+      <div class="filter-shell">
+        <div class="filters-grid">
+          <input id="search-filter" class="input" type="text" placeholder="Buscar por título, ciudad o categoría">
+          <select id="city-filter"></select>
+          <select id="type-filter">
+            <option value="">Todos los tipos</option>
+            <option value="experience">Experiencias</option>
+            <option value="accommodation">Alojamientos</option>
+          </select>
+          <select id="category-filter"></select>
+          <select id="sort-filter">
+            <option value="featured">Ordenar: destacados</option>
+            <option value="rating">Mejor valorados</option>
+            <option value="price_asc">Menor precio</option>
+            <option value="price_desc">Mayor precio</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="catalog-grid" class="catalog-grid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Cómo funciona</h2>
+          <p>Diseñado para operar sin fricción y sin regalar control.</p>
+        </div>
+      </div>
+      <div class="cards-grid">
+        <article class="surface-card">
+          <h2>1. Cargás proveedores</h2>
+          <p>El proveedor puede registrarse solo, pero queda pendiente hasta aprobación. No entra al negocio por la ventana.</p>
+        </article>
+        <article class="surface-card">
+          <h2>2. Publican productos</h2>
+          <p>Experiencias y alojamientos con fotos, highlights, FAQs, política de cancelación y pricing.</p>
+        </article>
+        <article class="surface-card">
+          <h2>3. El usuario reserva</h2>
+          <p>Explora, compara, guarda favoritos y reserva desde una interfaz clara y rápida.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+    <footer class="footer">
+      <div class="container footer-row">
+        <div>LocalTours Pro · Marketplace propio para tours locales y alojamientos.</div>
+        <div data-user-badge class="user-badge"></div>
+      </div>
+    </footer>
+
+    <nav class="mobile-quick" data-mobile-quick></nav>
+  </div>
+
+  <script type="module" src="./assets/js/index.js"></script>
+</body>
+</html>

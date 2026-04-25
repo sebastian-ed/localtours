@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Panel admin · LocalTours Pro</title>
+  <meta name="description" content="Marketplace de experiencias y alojamientos locales con paneles por rol y backend en Supabase.">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="logo" href="./index.html">
+          <span class="logo-mark">LT</span>
+          <span>LocalTours Pro</span>
+        </a>
+        <nav class="header-nav">
+          <a href="./index.html#catalog">Experiencias</a>
+          <a href="./index.html#catalog">Alojamientos</a>
+          <a href="./index.html#how-it-works">Cómo funciona</a>
+        </nav>
+        <div class="nav-actions" data-nav-actions></div>
+      </div>
+    </header>
+
+    
+<main id="admin-page">
+  <section class="section">
+    <div class="container section-head">
+      <div>
+        <h1>Panel admin</h1>
+        <p>Gobierno operativo del marketplace: productos, reservas, categorías y usuarios.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stats-card"><strong id="admin-stat-users">0</strong><span>Usuarios</span></div>
+        <div class="stats-card"><strong id="admin-stat-products">0</strong><span>Productos</span></div>
+        <div class="stats-card"><strong id="admin-stat-bookings">0</strong><span>Reservas</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="tab-row">
+        <button class="is-active" data-admin-tab="products" type="button">Productos</button>
+        <button data-admin-tab="bookings" type="button">Reservas</button>
+        <button data-admin-tab="users" type="button">Usuarios</button>
+        <button data-admin-tab="categories" type="button">Categorías</button>
+      </div>
+    </div>
+
+    <div class="container cards-grid">
+      <article class="dashboard-card" data-admin-panel="products">
+        <h2>Productos</h2>
+        <div id="admin-listings-box"></div>
+      </article>
+
+      <article class="dashboard-card" data-admin-panel="bookings" hidden>
+        <h2>Reservas recientes</h2>
+        <div id="admin-bookings-box"></div>
+      </article>
+
+      <article class="dashboard-card" data-admin-panel="users" hidden>
+        <h2>Usuarios</h2>
+        <div id="admin-users-box"></div>
+      </article>
+
+      <article class="dashboard-card" data-admin-panel="categories" hidden>
+        <h2>Categorías</h2>
+        <div id="admin-categories-box"></div>
+      </article>
+    </div>
+  </section>
+</main>
+
+
+    <footer class="footer">
+      <div class="container footer-row">
+        <div>LocalTours Pro · Marketplace propio para tours locales y alojamientos.</div>
+        <div data-user-badge class="user-badge"></div>
+      </div>
+    </footer>
+
+    <nav class="mobile-quick" data-mobile-quick></nav>
+  </div>
+
+  <script type="module" src="./assets/js/admin.js"></script>
+</body>
+</html>

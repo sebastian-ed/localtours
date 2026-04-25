@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Panel proveedor · LocalTours Pro</title>
+  <meta name="description" content="Marketplace de experiencias y alojamientos locales con paneles por rol y backend en Supabase.">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="logo" href="./index.html">
+          <span class="logo-mark">LT</span>
+          <span>LocalTours Pro</span>
+        </a>
+        <nav class="header-nav">
+          <a href="./index.html#catalog">Experiencias</a>
+          <a href="./index.html#catalog">Alojamientos</a>
+          <a href="./index.html#how-it-works">Cómo funciona</a>
+        </nav>
+        <div class="nav-actions" data-nav-actions></div>
+      </div>
+    </header>
+
+    
+<main id="provider-page">
+  <section class="section">
+    <div class="container section-head">
+      <div>
+        <h1>Panel proveedor</h1>
+        <p>Tu escritorio operativo para cargar y gestionar productos.</p>
+      </div>
+      <div id="provider-role-badge"></div>
+    </div>
+  </section>
+
+  <section class="section" id="provider-gate" hidden>
+    <div class="container">
+      <article class="dashboard-card">
+        <h2>Tu cuenta está en revisión</h2>
+        <p>Te registraste como proveedor, pero todavía no fuiste aprobado por un super admin. Mientras tanto no podés publicar productos. Primero control, después escala.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="provider-app">
+    <div class="container">
+      <div class="tab-row">
+        <button class="is-active" data-provider-tab="products" type="button">Productos</button>
+        <button data-provider-tab="bookings" type="button">Reservas</button>
+      </div>
+    </div>
+
+    <div class="container provider-grid">
+      <article class="dashboard-card">
+        <div class="stats-grid">
+          <div class="stats-card"><strong id="provider-stat-products">0</strong><span>Productos</span></div>
+          <div class="stats-card"><strong id="provider-stat-published">0</strong><span>Publicados</span></div>
+          <div class="stats-card"><strong id="provider-stat-draft">0</strong><span>Borradores</span></div>
+        </div>
+
+        <div data-provider-panel="products">
+          <hr class="soft">
+          <h2 id="listing-form-title">Nuevo producto</h2>
+          <form id="listing-form" class="cards-grid">
+            <input id="listing-id" type="hidden">
+
+            <div class="field">
+              <label>Tipo</label>
+              <select id="listing-type">
+                <option value="experience">Experiencia</option>
+                <option value="accommodation">Alojamiento</option>
+              </select>
+            </div>
+
+            <div class="field" id="owner-provider-field" hidden>
+              <label>Proveedor dueño del producto</label>
+              <select id="listing-owner-provider"></select>
+            </div>
+
+            <div class="field">
+              <label>Título</label>
+              <input id="listing-title" class="input" type="text" required>
+            </div>
+
+            <div class="field">
+              <label>Ciudad</label>
+              <input id="listing-city" class="input" type="text" required>
+            </div>
+
+            <div class="field">
+              <label>País</label>
+              <input id="listing-country" class="input" type="text" value="Argentina">
+            </div>
+
+            <div class="field">
+              <label>Resumen corto</label>
+              <textarea id="listing-summary" placeholder="Texto corto para la card y SEO"></textarea>
+            </div>
+
+            <div class="field">
+              <label>Descripción completa</label>
+              <textarea id="listing-description"></textarea>
+            </div>
+
+            <div class="field">
+              <label>Precio base</label>
+              <input id="listing-price" class="input" type="number" min="0" step="0.01" required>
+            </div>
+
+            <div class="field">
+              <label>Precio oferta</label>
+              <input id="listing-sale-price" class="input" type="number" min="0" step="0.01">
+            </div>
+
+            <div class="field">
+              <label>Moneda</label>
+              <select id="listing-currency">
+                <option value="USD">USD</option>
+                <option value="ARS">ARS</option>
+                <option value="EUR">EUR</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Duración</label>
+              <input id="listing-duration" class="input" type="text" placeholder="Ej. 3 horas / 2 noches">
+            </div>
+
+            <div class="field">
+              <label>Capacidad</label>
+              <input id="listing-capacity" class="input" type="number" min="1" value="1">
+            </div>
+
+            <div class="field">
+              <label>Punto de encuentro</label>
+              <input id="listing-meeting-point" class="input" type="text">
+            </div>
+
+            <div class="field">
+              <label>Política de cancelación</label>
+              <input id="listing-cancellation" class="input" type="text" placeholder="Ej. Cancelación gratis hasta 24 hs antes">
+            </div>
+
+            <div class="field">
+              <label>Idiomas (separados por coma)</label>
+              <input id="listing-languages" class="input" type="text" placeholder="Español, Inglés, Portugués">
+            </div>
+
+            <div class="field">
+              <label>Categorías</label>
+              <select id="listing-categories" multiple size="6"></select>
+            </div>
+
+            <div class="field">
+              <label>Highlights (uno por línea)</label>
+              <textarea id="listing-highlights"></textarea>
+            </div>
+
+            <div class="field">
+              <label>Incluye (uno por línea)</label>
+              <textarea id="listing-includes"></textarea>
+            </div>
+
+            <div class="field">
+              <label>No incluye (uno por línea)</label>
+              <textarea id="listing-excludes"></textarea>
+            </div>
+
+            <div class="field">
+              <label>Itinerario (uno por línea)</label>
+              <textarea id="listing-itinerary"></textarea>
+            </div>
+
+            <div class="field">
+              <label>FAQs (una por línea, formato: pregunta | respuesta)</label>
+              <textarea id="listing-faqs"></textarea>
+            </div>
+
+            <div class="field">
+              <label>URL imagen portada</label>
+              <input id="listing-cover-image" class="input" type="url" placeholder="https://...">
+            </div>
+
+            <div class="field">
+              <label>Subir imágenes</label>
+              <input id="listing-files" class="input" type="file" multiple accept="image/*">
+            </div>
+
+            <div class="field">
+              <label><input id="listing-featured" type="checkbox"> Marcar como destacado</label>
+              <label><input id="listing-published" type="checkbox"> Publicar ahora</label>
+            </div>
+
+            <div class="table-actions">
+              <button class="btn btn-primary" type="submit">Guardar producto</button>
+              <button class="btn btn-ghost" type="button" id="listing-reset-btn">Limpiar</button>
+            </div>
+          </form>
+        </div>
+      </article>
+
+      <div class="cards-grid">
+        <article class="dashboard-card" data-provider-panel="products">
+          <h2>Mis productos</h2>
+          <div class="table-shell">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Título</th>
+                  <th>Tipo</th>
+                  <th>Ciudad</th>
+                  <th>Precio</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="provider-listings-body"></tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="dashboard-card" data-provider-panel="bookings" hidden>
+          <h2>Reservas</h2>
+          <div id="provider-bookings-box"></div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+    <footer class="footer">
+      <div class="container footer-row">
+        <div>LocalTours Pro · Marketplace propio para tours locales y alojamientos.</div>
+        <div data-user-badge class="user-badge"></div>
+      </div>
+    </footer>
+
+    <nav class="mobile-quick" data-mobile-quick></nav>
+  </div>
+
+  <script type="module" src="./assets/js/provider.js"></script>
+</body>
+</html>
